@@ -1,0 +1,57 @@
+import {
+  Activity,
+  BellRing,
+  Bookmark,
+  Compass,
+  Download,
+  Flower2,
+  GraduationCap,
+  Home,
+  Landmark,
+  LayoutDashboard,
+  Leaf,
+  LifeBuoy,
+  Library,
+  MapPin,
+  NotebookPen,
+  Scale,
+  ScanLine,
+  Settings,
+  Siren,
+  Sparkles,
+  UserRound,
+  Users,
+  UtensilsCrossed,
+  type LucideIcon,
+} from "lucide-react";
+
+export const ICONS: Record<string, LucideIcon> = {
+  Activity,
+  BellRing,
+  Bookmark,
+  Compass,
+  Download,
+  Flower2,
+  GraduationCap,
+  Home,
+  Landmark,
+  LayoutDashboard,
+  Leaf,
+  LifeBuoy,
+  Library,
+  MapPin,
+  NotebookPen,
+  Scale,
+  ScanLine,
+  Settings,
+  Siren,
+  Sparkles,
+  UserRound,
+  Users,
+  UtensilsCrossed,
+};
+
+export function NavIcon({ name, size = 16 }: { name: string; size?: number }) {
+  const Icon = ICONS[name] ?? Sparkles;
+  return <Icon size={size} strokeWidth={1.6} aria-hidden />;
+}

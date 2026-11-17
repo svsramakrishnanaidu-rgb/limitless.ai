@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#103D2C"/>
+      <stop offset="1" stop-color="#06110C"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFF3B0"/>
+      <stop offset="0.5" stop-color="#FFC107"/>
+      <stop offset="1" stop-color="#B8860B"/>
+    </linearGradient>
+    <linearGradient id="teal" x1="20" y1="44" x2="46" y2="20" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#00A78B"/>
+      <stop offset="1" stop-color="#0B7A66"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#bg)"/>
+  <path d="M32 32c-7.4-9.6-12.3-12-17.4-9.2-5.4 3-6.4 10.9-2.2 16.1 3.8 4.6 9.4 4.2 13.6.6 2.6-2.2 4.8-4.9 6-7.5" fill="none" stroke="url(#gold)" stroke-width="3.4" stroke-linecap="round"/>
+  <path d="M32 32c7.4 9.6 12.3 12 17.4 9.2 5.4-3 6.4-10.9 2.2-16.1-3.8-4.6-9.4-4.2-13.6-.6-2.6 2.2-4.8 4.9-6 7.5" fill="none" stroke="url(#teal)" stroke-width="3.4" stroke-linecap="round"/>
+  <path d="M32 32c1.2-6.4 4.6-10.6 9.8-12.4-.4 6.2-3.6 10.8-9.8 12.4Z" fill="url(#teal)"/>
+</svg>

@@ -1,0 +1,296 @@
+export type Recipe = {
+  slug: string;
+  name: string;
+  region: string;
+  diet: "Vegetarian" | "Non-vegetarian" | "Vegan";
+  season: string;
+  minutes: number;
+  servings: number;
+  summary: string;
+  ingredients: string[];
+  steps: string[];
+  nutrition: { kcal: number; protein: number; carbs: number; fat: number; fibre: number };
+  allergens: string[];
+  notes: string;
+};
+
+/**
+ * Nutrition figures are approximate per serving, calculated from standard
+ * composition tables for the listed quantities. They will vary with brands,
+ * portion sizes and cooking method. They are not a prescription.
+ */
+export const RECIPES: Recipe[] = [
+  {
+    slug: "moong-khichdi",
+    name: "Moong dal khichdi",
+    region: "Gujarat / pan-India",
+    diet: "Vegetarian",
+    season: "All year",
+    minutes: 35,
+    servings: 3,
+    summary: "A one-pot rice and split mung dal dish that is easy to digest and inexpensive to make.",
+    ingredients: [
+      "1/2 cup split yellow moong dal, rinsed",
+      "1/2 cup rice, rinsed",
+      "2 cups water (more for a softer texture)",
+      "1 tsp cumin seeds",
+      "1/2 tsp turmeric",
+      "1 tbsp ghee or oil",
+      "1 small piece ginger, grated",
+      "Salt to taste",
+      "Fresh coriander to finish",
+    ],
+    steps: [
+      "Rinse the dal and rice until the water runs mostly clear.",
+      "Warm the ghee in a pressure cooker or heavy pot and add cumin seeds.",
+      "Add ginger and turmeric, stir for 20 seconds, then add the dal, rice and water.",
+      "Pressure cook for 3 whistles, or simmer covered for 25 minutes until soft.",
+      "Season with salt, rest for 5 minutes, and finish with coriander.",
+    ],
+    nutrition: { kcal: 320, protein: 11, carbs: 54, fat: 6, fibre: 6 },
+    allergens: ["Milk (if ghee is used; replace with oil for dairy-free)"],
+    notes: "Add vegetables such as carrot and peas for more fibre. Suitable for most people recovering from mild illness, but check with a clinician if you are on a restricted diet.",
+  },
+  {
+    slug: "palak-paneer",
+    name: "Palak paneer",
+    region: "North India",
+    diet: "Vegetarian",
+    season: "Winter",
+    minutes: 30,
+    servings: 3,
+    summary: "Spinach cooked with paneer, providing protein, calcium and iron alongside vitamin C-rich greens.",
+    ingredients: [
+      "400 g spinach, washed",
+      "200 g paneer, cubed",
+      "1 onion, chopped",
+      "2 tomatoes, chopped",
+      "1 tbsp ginger-garlic paste",
+      "1/2 tsp cumin seeds",
+      "1/2 tsp turmeric",
+      "1 tsp coriander powder",
+      "1 tbsp oil",
+      "Salt to taste",
+    ],
+    steps: [
+      "Blanch the spinach for 2 minutes, drain, and blend to a rough purée.",
+      "Warm the oil and add cumin seeds, then onion; cook until soft.",
+      "Add ginger-garlic paste and tomatoes, and cook until the oil separates.",
+      "Stir in the spices, then the spinach purée, and simmer for 5 minutes.",
+      "Add paneer cubes, warm through for 3 minutes, and season with salt.",
+    ],
+    nutrition: { kcal: 290, protein: 15, carbs: 14, fat: 20, fibre: 5 },
+    allergens: ["Milk (paneer)"],
+    notes: "The calcium in paneer and the oxalates in spinach mean this is not a reliable iron source for people with iron deficiency. Pair with vitamin C-rich foods and take iron as prescribed.",
+  },
+  {
+    slug: "lemon-rice",
+    name: "Lemon rice",
+    region: "South India",
+    diet: "Vegan",
+    season: "Summer",
+    minutes: 20,
+    servings: 3,
+    summary: "Cooled rice tossed with lemon, peanuts and curry leaves; a light option for hot days.",
+    ingredients: [
+      "2 cups cooked rice, cooled",
+      "1 lemon, juiced",
+      "2 tbsp peanuts",
+      "1 tsp mustard seeds",
+      "1/2 tsp turmeric",
+      "10 curry leaves",
+      "1 green chilli, slit (optional)",
+      "1 tbsp sesame oil",
+      "Salt to taste",
+    ],
+    steps: [
+      "Heat the oil and add mustard seeds; wait for them to pop.",
+      "Add peanuts and fry until lightly golden, then curry leaves and chilli.",
+      "Stir in turmeric, then add the rice and toss gently to coat.",
+      "Turn off the heat and stir through lemon juice and salt.",
+    ],
+    nutrition: { kcal: 280, protein: 6, carbs: 45, fat: 9, fibre: 2 },
+    allergens: ["Peanuts"],
+    notes: "Cool cooked rice quickly and refrigerate within an hour. Reheat thoroughly; rice left at room temperature can grow Bacillus cereus.",
+  },
+  {
+    slug: "rajma",
+    name: "Rajma (kidney bean curry)",
+    region: "Punjab / North India",
+    diet: "Vegan",
+    season: "All year",
+    minutes: 50,
+    servings: 4,
+    summary: "Kidney beans in a tomato-onion gravy, high in fibre and plant protein.",
+    ingredients: [
+      "1 cup dried kidney beans, soaked overnight",
+      "2 onions, chopped",
+      "3 tomatoes, puréed",
+      "1 tbsp ginger-garlic paste",
+      "1 tsp cumin seeds",
+      "1 tsp coriander powder",
+      "1/2 tsp garam masala",
+      "1 tbsp oil",
+      "Salt to taste",
+    ],
+    steps: [
+      "Drain the soaked beans and pressure cook with fresh water until soft, about 4 whistles.",
+      "Cook cumin in oil, add onion and brown lightly.",
+      "Add ginger-garlic paste and tomato purée; cook until thickened.",
+      "Add the spices and the beans with their cooking liquid.",
+      "Simmer for 15 minutes, mashing a few beans to thicken. Finish with garam masala.",
+    ],
+    nutrition: { kcal: 340, protein: 16, carbs: 48, fat: 8, fibre: 15 },
+    allergens: [],
+    notes: "Dried beans must be boiled thoroughly; raw or undercooked kidney beans contain phytohaemagglutinin and can cause vomiting and diarrhoea.",
+  },
+  {
+    slug: "vegetable-upma",
+    name: "Vegetable upma",
+    region: "South India",
+    diet: "Vegetarian",
+    season: "All year",
+    minutes: 25,
+    servings: 3,
+    summary: "Semolina cooked with vegetables and mustard tempering; a quick breakfast.",
+    ingredients: [
+      "1 cup semolina (rava)",
+      "2 cups hot water",
+      "1 carrot, diced",
+      "1/2 cup green peas",
+      "1 onion, chopped",
+      "1 tsp mustard seeds",
+      "1 tsp urad dal",
+      "10 curry leaves",
+      "1 tbsp oil",
+      "Salt to taste",
+      "Lemon juice to finish",
+    ],
+    steps: [
+      "Dry-roast the semolina until it smells nutty, then set aside.",
+      "Temper mustard seeds and urad dal in oil, add curry leaves and onion.",
+      "Add vegetables and cook for 3 minutes.",
+      "Pour in hot water with salt, bring to a boil, then stir in the semolina.",
+      "Cover and cook on low for 3 minutes, fluff, and finish with lemon.",
+    ],
+    nutrition: { kcal: 300, protein: 8, carbs: 48, fat: 8, fibre: 4 },
+    allergens: ["Wheat (semolina)", "Milk (if served with curd)"],
+    notes: "Semolina is refined wheat. For more fibre, use whole-wheat rava or add extra vegetables.",
+  },
+  {
+    slug: "grilled-fish",
+    name: "Grilled fish with herbs",
+    region: "Coastal India",
+    diet: "Non-vegetarian",
+    season: "All year",
+    minutes: 25,
+    servings: 2,
+    summary: "Oven-grilled fish with lime and herbs; a lean protein option.",
+    ingredients: [
+      "2 fish fillets (about 150 g each), such as pomfret or mackerel",
+      "1 lime, juiced",
+      "1 tbsp olive or mustard oil",
+      "2 garlic cloves, crushed",
+      "1/2 tsp black pepper",
+      "Fresh coriander and mint, chopped",
+      "Salt to taste",
+    ],
+    steps: [
+      "Pat the fish dry and score the skin lightly.",
+      "Mix lime juice, oil, garlic, pepper and herbs, and coat the fish.",
+      "Marinate for 10 minutes in the refrigerator.",
+      "Grill or bake at 200°C for 10 to 12 minutes until the flesh flakes.",
+      "Serve with a salad or steamed vegetables.",
+    ],
+    nutrition: { kcal: 250, protein: 30, carbs: 3, fat: 13, fibre: 0.5 },
+    allergens: ["Fish"],
+    notes: "Fish is a source of omega-3 fatty acids. Pregnant women and people with weakened immunity should avoid raw fish and choose thoroughly cooked options.",
+  },
+  {
+    slug: "ragi-mudde",
+    name: "Ragi mudde",
+    region: "Karnataka",
+    diet: "Vegetarian",
+    season: "All year",
+    minutes: 20,
+    servings: 2,
+    summary: "Finger-millet balls served with sambar or dal; high in calcium and fibre.",
+    ingredients: [
+      "1 cup finger millet (ragi) flour",
+      "2.5 cups water",
+      "1/4 tsp salt",
+      "Sambar or dal to serve",
+    ],
+    steps: [
+      "Bring the water to a rolling boil with salt.",
+      "Sprinkle in the ragi flour while stirring to avoid lumps.",
+      "Cook on low for 5 to 7 minutes, stirring until glossy and thick.",
+      "Rest for 5 minutes, then shape into smooth balls with a wet spoon.",
+      "Serve hot with sambar and vegetables.",
+    ],
+    nutrition: { kcal: 270, protein: 7, carbs: 55, fat: 2, fibre: 7 },
+    allergens: [],
+    notes: "Finger millet is a good source of calcium and fibre. It is not a treatment for diabetes, but it has a lower glycaemic impact than refined rice in many meals.",
+  },
+  {
+    slug: "curd-rice",
+    name: "Curd rice",
+    region: "Tamil Nadu",
+    diet: "Vegetarian",
+    season: "Summer",
+    minutes: 15,
+    servings: 2,
+    summary: "Cooled rice mixed with curd and tempered spices; a light, probiotic-containing dish.",
+    ingredients: [
+      "1 cup cooked rice, cooled",
+      "1 cup plain curd (yoghurt)",
+      "1 tsp mustard seeds",
+      "1 tsp ginger, grated",
+      "10 curry leaves",
+      "1 tsp oil",
+      "Salt to taste",
+      "Pomegranate or grated carrot to finish",
+    ],
+    steps: [
+      "Mash the cooled rice lightly and mix with curd and salt.",
+      "Temper mustard seeds, ginger and curry leaves in oil.",
+      "Pour the tempering over the rice and mix.",
+      "Chill for 15 minutes if desired and top with pomegranate or carrot.",
+    ],
+    nutrition: { kcal: 260, protein: 9, carbs: 40, fat: 6, fibre: 1.5 },
+    allergens: ["Milk"],
+    notes: "Live cultures in curd vary by product. People who are immunocompromised should check with a clinician before relying on fermented foods.",
+  },
+];
+
+export const SEASONAL_FOODS = [
+  {
+    season: "Monsoon (June–September)",
+    guidance: "Prefer freshly cooked, hot food and boiled or filtered water. Wash leafy vegetables thoroughly; avoid raw salads when hygiene is uncertain.",
+    foods: ["Bottle gourd", "Ridge gourd", "Moong dal", "Ginger", "Turmeric", "Cooked greens"],
+  },
+  {
+    season: "Winter (October–February)",
+    guidance: "Seasonal greens and root vegetables are plentiful. Include vitamin C-rich fruit and warm, freshly cooked meals.",
+    foods: ["Spinach", "Fenugreek", "Carrot", "Beetroot", "Orange", "Amla", "Sesame"],
+  },
+  {
+    season: "Summer (March–June)",
+    guidance: "Prioritise fluids and water-rich foods. Avoid prolonged sun exposure and heavy fried meals in the heat of the day.",
+    foods: ["Cucumber", "Watermelon", "Buttermilk", "Coconut", "Bottle gourd", "Lemon", "Mango (in moderation)"],
+  },
+];
+
+export const COOKING_PRACTICES = [
+  "Wash hands with soap before preparing food and after handling raw meat, fish or eggs.",
+  "Keep raw meat separate from cooked food and use different boards where possible.",
+  "Cook poultry and meat thoroughly; refrigerate leftovers within two hours.",
+  "Reheat leftovers until steaming hot all the way through, and discard food left out overnight.",
+  "Use iodised salt and keep total salt intake below about 5 g a day for adults, as WHO recommends.",
+  "Prefer water and unsweetened drinks; keep added sugar low, especially for children.",
+  "Rinse and soak pulses; boil kidney beans thoroughly.",
+  "Choose whole grains and include a variety of vegetables and fruit each day.",
+];
+
+export const NUTRITION_DISCLAIMER =
+  "Nutrition figures are approximate per serving and depend on exact ingredients, brands and portion size. This guide is general education, not a therapeutic diet. People with diabetes, kidney disease, food allergies, pregnancy or eating disorders should get individual advice from a qualified dietitian or clinician.";

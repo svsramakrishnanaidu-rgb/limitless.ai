@@ -1,0 +1,16 @@
+node_modules/
+.next/
+out/
+.env
+.env.local
+.env*.local
+*.tsbuildinfo
+next-env.d.ts
+.DS_Store
+npm-debug.log*
+.vercel
+
+# Local agent artefacts and screenshots
+.cloud-attachments/
+.freebuff/
+preview-dashboard*.png
